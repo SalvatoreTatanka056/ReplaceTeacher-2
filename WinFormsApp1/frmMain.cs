@@ -744,5 +744,10 @@ namespace ReplaceTeacher
         {
 
         }
+
+        private void splitContainer3_SplitterMoved(object sender, SplitterEventArgs e)
+        {
+
+        }
     }
 }

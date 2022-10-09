@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.button1 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -65,13 +66,22 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.statusStrip1);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 537);
+            this.panel1.Location = new System.Drawing.Point(0, 575);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1368, 100);
+            this.panel1.Size = new System.Drawing.Size(1368, 62);
             this.panel1.TabIndex = 0;
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Location = new System.Drawing.Point(0, 40);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1368, 22);
+            this.statusStrip1.TabIndex = 39;
+            this.statusStrip1.Text = "statusStrip1";
             // 
             // button1
             // 
@@ -107,8 +117,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(1368, 537);
-            this.splitContainer1.SplitterDistance = 200;
+            this.splitContainer1.Size = new System.Drawing.Size(1368, 575);
+            this.splitContainer1.SplitterDistance = 299;
             this.splitContainer1.TabIndex = 2;
             // 
             // splitContainer3
@@ -125,9 +135,10 @@
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.dataGridView2);
-            this.splitContainer3.Size = new System.Drawing.Size(1368, 200);
-            this.splitContainer3.SplitterDistance = 120;
+            this.splitContainer3.Size = new System.Drawing.Size(1368, 299);
+            this.splitContainer3.SplitterDistance = 114;
             this.splitContainer3.TabIndex = 22;
+            this.splitContainer3.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer3_SplitterMoved);
             // 
             // splitContainer4
             // 
@@ -142,7 +153,7 @@
             this.splitContainer4.Panel2.Controls.Add(this.label4);
             this.splitContainer4.Panel2.Controls.Add(this.dateTimePicker1);
             this.splitContainer4.Panel2.Controls.Add(this.button3);
-            this.splitContainer4.Size = new System.Drawing.Size(1368, 120);
+            this.splitContainer4.Size = new System.Drawing.Size(1368, 114);
             this.splitContainer4.SplitterDistance = 729;
             this.splitContainer4.TabIndex = 32;
             // 
@@ -191,7 +202,7 @@
             this.dataGridView2.Location = new System.Drawing.Point(0, 0);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 25;
-            this.dataGridView2.Size = new System.Drawing.Size(1368, 76);
+            this.dataGridView2.Size = new System.Drawing.Size(1368, 181);
             this.dataGridView2.TabIndex = 22;
             this.dataGridView2.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView2_CellFormatting);
             // 
@@ -208,7 +219,7 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.dataGridView3);
-            this.splitContainer2.Size = new System.Drawing.Size(1368, 333);
+            this.splitContainer2.Size = new System.Drawing.Size(1368, 272);
             this.splitContainer2.SplitterDistance = 641;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -219,7 +230,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(641, 333);
+            this.dataGridView1.Size = new System.Drawing.Size(641, 272);
             this.dataGridView1.TabIndex = 20;
             // 
             // dataGridView3
@@ -229,7 +240,7 @@
             this.dataGridView3.Location = new System.Drawing.Point(0, 0);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowTemplate.Height = 25;
-            this.dataGridView3.Size = new System.Drawing.Size(723, 333);
+            this.dataGridView3.Size = new System.Drawing.Size(723, 272);
             this.dataGridView3.TabIndex = 22;
             // 
             // frmMain
@@ -244,6 +255,7 @@
             this.Text = "Replace Teacher.";
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -283,5 +295,6 @@
         private SplitContainer splitContainer2;
         private DataGridView dataGridView1;
         public DataGridView dataGridView3;
+        private StatusStrip statusStrip1;
     }
 }
