@@ -36,6 +36,7 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.button3 = new System.Windows.Forms.Button();
@@ -55,6 +56,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).BeginInit();
             this.splitContainer4.Panel2.SuspendLayout();
             this.splitContainer4.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
@@ -154,39 +156,47 @@
             // 
             // splitContainer4.Panel2
             // 
-            this.splitContainer4.Panel2.Controls.Add(this.button2);
-            this.splitContainer4.Panel2.Controls.Add(this.dateTimePicker1);
-            this.splitContainer4.Panel2.Controls.Add(this.button3);
+            this.splitContainer4.Panel2.Controls.Add(this.panel2);
             this.splitContainer4.Size = new System.Drawing.Size(1368, 120);
             this.splitContainer4.SplitterDistance = 309;
             this.splitContainer4.TabIndex = 32;
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.dateTimePicker1);
+            this.panel2.Controls.Add(this.button3);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(712, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(341, 118);
+            this.panel2.TabIndex = 0;
+            // 
             // button2
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.Location = new System.Drawing.Point(0, 51);
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.button2.Location = new System.Drawing.Point(100, 40);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(1053, 26);
-            this.button2.TabIndex = 33;
+            this.button2.Size = new System.Drawing.Size(201, 26);
+            this.button2.TabIndex = 36;
             this.button2.Text = "&Export ";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dateTimePicker1.Location = new System.Drawing.Point(0, 28);
+            this.dateTimePicker1.Location = new System.Drawing.Point(100, 11);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(1053, 23);
-            this.dateTimePicker1.TabIndex = 34;
+            this.dateTimePicker1.Size = new System.Drawing.Size(201, 23);
+            this.dateTimePicker1.TabIndex = 37;
             // 
             // button3
             // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.Location = new System.Drawing.Point(0, 0);
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.button3.Location = new System.Drawing.Point(100, 72);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(1053, 28);
-            this.button3.TabIndex = 32;
+            this.button3.Size = new System.Drawing.Size(201, 28);
+            this.button3.TabIndex = 35;
             this.button3.Text = "&Calcola Sostituzioni";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -265,6 +275,7 @@
             this.splitContainer4.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).EndInit();
             this.splitContainer4.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel2.ResumeLayout(false);
@@ -284,13 +295,14 @@
         private SplitContainer splitContainer1;
         private SplitContainer splitContainer3;
         private SplitContainer splitContainer4;
-        private Button button2;
-        private DateTimePicker dateTimePicker1;
-        private Button button3;
         private DataGridView dataGridView2;
         private SplitContainer splitContainer2;
         private DataGridView dataGridView1;
         public DataGridView dataGridView3;
         private StatusStrip statusStrip1;
+        private Panel panel2;
+        private Button button2;
+        private DateTimePicker dateTimePicker1;
+        private Button button3;
     }
 }
