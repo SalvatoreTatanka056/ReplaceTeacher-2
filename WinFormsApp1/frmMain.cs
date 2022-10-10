@@ -395,7 +395,7 @@ namespace ReplaceTeacher
                                     {
                                         myDataRow["Nome_Docente_3"] += itemD.Nome_docente +";";
 
-                                        itemD.Visto3 = true;
+                                        //itemD.Visto3 = true;
                                         listDisponibili[i] = itemD;
                                     }
                                 }
@@ -428,7 +428,7 @@ namespace ReplaceTeacher
                                     {
                                         myDataRow["Nome_Docente_4"] += itemD.Nome_docente +";";
 
-                                        itemD.Visto4 = true;
+                                        //itemD.Visto4 = true;
                                         listDisponibili[i] = itemD;
                                     }
                                 }
@@ -460,7 +460,7 @@ namespace ReplaceTeacher
                                     {
                                         myDataRow["Nome_Docente_5"]  += itemD.Nome_docente+";";
 
-                                        itemD.Visto5 = true;
+                                        //itemD.Visto5 = true;
                                         listDisponibili[i] = itemD;
                                     }
                                 }
@@ -491,7 +491,7 @@ namespace ReplaceTeacher
                                     {
                                         myDataRow["Nome_Docente_6"] += itemD.Nome_docente +";";
 
-                                        itemD.Visto6 = true;
+                                        //itemD.Visto6 = true;
                                         listDisponibili[i] = itemD;
                                     }
                                 }
@@ -524,7 +524,7 @@ namespace ReplaceTeacher
                                     {
                                         myDataRow["Nome_Docente_7"] += itemD.Nome_docente +";";
 
-                                        itemD.Visto7 = true;
+                                        //itemD.Visto7 = true;
                                         listDisponibili[i] = itemD;
                                     }
                                 }
@@ -556,12 +556,11 @@ namespace ReplaceTeacher
                                     {
                                         myDataRow["Nome_Docente_8"] += itemD.Nome_docente +";";
 
-                                        itemD.Visto8 = true;
+                                        //itemD.Visto8 = true;
                                         listDisponibili[i] = itemD;
                                     }
                                 }
                             }
-
                         }
                     }
                 }
