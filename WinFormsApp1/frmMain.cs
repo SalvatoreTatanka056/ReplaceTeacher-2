@@ -623,10 +623,10 @@ namespace ReplaceTeacher
         private void button2_Click(object sender, EventArgs e)
         {
             ExportGridToword();
+
             /*printPreviewDialog1.ShowDialog();
             if (printDialog1.ShowDialog() == DialogResult.OK)
             {
-
                 //printDocument1.Print();
             }*/
         }
