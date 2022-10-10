@@ -321,12 +321,15 @@ namespace ReplaceTeacher
                                 continue;
                             else
                             {
-                                if (itemD.Prima.Equals("P"))
+                                if (!itemA.Prima.Equals("P"))
                                 {
-                                    myDataRow["Nome_Docente_1"] = itemD.Nome_docente;
+                                    if (itemD.Prima.Equals("P"))
+                                    {
+                                        myDataRow["Nome_Docente_1"] = itemD.Nome_docente;
 
-                                    itemD.Visto1 = true;
-                                    listDisponibili[i] = itemD;
+                                        itemD.Visto1 = true;
+                                        listDisponibili[i] = itemD;
+                                    }
                                 }
                             }
                         }
@@ -349,12 +352,16 @@ namespace ReplaceTeacher
                                 continue;
                             else
                             {
-                                if (itemD.Seconda.Equals("P"))
+                                if (!itemA.Prima.Equals("P"))
                                 {
-                                    myDataRow["Nome_Docente_2"] = itemD.Nome_docente;
 
-                                    itemD.Visto2 = true;
-                                    listDisponibili[i] = itemD;
+                                    if (itemD.Seconda.Equals("P"))
+                                    {
+                                        myDataRow["Nome_Docente_2"] = itemD.Nome_docente;
+
+                                        itemD.Visto2 = true;
+                                        listDisponibili[i] = itemD;
+                                    }
                                 }
                             }
                         }
@@ -378,12 +385,17 @@ namespace ReplaceTeacher
                                 continue;
                             else
                             {
-                                if (itemD.Terza.Equals("P"))
-                                {
-                                    myDataRow["Nome_Docente_3"] = itemD.Nome_docente;
 
-                                    itemD.Visto3 = true;
-                                    listDisponibili[i] = itemD;
+                                if (!itemA.Prima.Equals("P"))
+                                {
+
+                                    if (itemD.Terza.Equals("P"))
+                                    {
+                                        myDataRow["Nome_Docente_3"] = itemD.Nome_docente;
+
+                                        itemD.Visto3 = true;
+                                        listDisponibili[i] = itemD;
+                                    }
                                 }
                             }
                         }
@@ -407,12 +419,16 @@ namespace ReplaceTeacher
                                 continue;
                             else
                             {
-                                if (itemD.Quarta.Equals("P"))
+                                if (!itemA.Prima.Equals("P"))
                                 {
-                                    myDataRow["Nome_Docente_4"] = itemD.Nome_docente;
 
-                                    itemD.Visto4 = true;
-                                    listDisponibili[i] = itemD;
+                                    if (itemD.Quarta.Equals("P"))
+                                    {
+                                        myDataRow["Nome_Docente_4"] = itemD.Nome_docente;
+
+                                        itemD.Visto4 = true;
+                                        listDisponibili[i] = itemD;
+                                    }
                                 }
                             }
                         }
@@ -436,12 +452,15 @@ namespace ReplaceTeacher
                                 continue;
                             else
                             {
-                                if (itemD.Quinta.Equals("P"))
+                                if (!itemA.Prima.Equals("P"))
                                 {
-                                    myDataRow["Nome_Docente_5"] = itemD.Nome_docente;
+                                    if (itemD.Quinta.Equals("P"))
+                                    {
+                                        myDataRow["Nome_Docente_5"] = itemD.Nome_docente;
 
-                                    itemD.Visto5 = true;
-                                    listDisponibili[i] = itemD;
+                                        itemD.Visto5 = true;
+                                        listDisponibili[i] = itemD;
+                                    }
                                 }
                             }
                         }
@@ -464,12 +483,15 @@ namespace ReplaceTeacher
                                 continue;
                             else
                             {
-                                if (itemD.Sesta.Equals("P"))
+                                if (!itemA.Prima.Equals("P"))
                                 {
-                                    myDataRow["Nome_Docente_6"] = itemD.Nome_docente;
+                                    if (itemD.Sesta.Equals("P"))
+                                    {
+                                        myDataRow["Nome_Docente_6"] = itemD.Nome_docente;
 
-                                    itemD.Visto6 = true;
-                                    listDisponibili[i] = itemD;
+                                        itemD.Visto6 = true;
+                                        listDisponibili[i] = itemD;
+                                    }
                                 }
                             }
                         }
@@ -494,12 +516,15 @@ namespace ReplaceTeacher
                                 continue;
                             else
                             {
-                                if (itemD.Settima.Equals("P"))
+                                if (!itemA.Prima.Equals("P"))
                                 {
-                                    myDataRow["Nome_Docente_7"] = itemD.Nome_docente;
+                                    if (itemD.Settima.Equals("P"))
+                                    {
+                                        myDataRow["Nome_Docente_7"] = itemD.Nome_docente;
 
-                                    itemD.Visto7 = true;
-                                    listDisponibili[i] = itemD;
+                                        itemD.Visto7 = true;
+                                        listDisponibili[i] = itemD;
+                                    }
                                 }
                             }
                         }
@@ -523,12 +548,15 @@ namespace ReplaceTeacher
                                 continue;
                             else
                             {
-                                if (itemD.Ottava.Equals("P"))
+                                if (!itemA.Prima.Equals("P"))
                                 {
-                                    myDataRow["Nome_Docente_8"] = itemD.Nome_docente;
+                                    if (itemD.Ottava.Equals("P"))
+                                    {
+                                        myDataRow["Nome_Docente_8"] = itemD.Nome_docente;
 
-                                    itemD.Visto8 = true;
-                                    listDisponibili[i] = itemD;
+                                        itemD.Visto8 = true;
+                                        listDisponibili[i] = itemD;
+                                    }
                                 }
                             }
 
