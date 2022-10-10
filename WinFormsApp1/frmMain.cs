@@ -289,27 +289,27 @@ namespace ReplaceTeacher
                 myDataRow["Giorno"] = dateTimePicker1.Value.DayOfWeek.ToString();
                 myDataRow["Nome_Assente"] = itemA.Nome_docente;
                 myDataRow["1°"] = itemA.Prima;
-                myDataRow["Nome_Docente_1"] = "NS";
+                myDataRow["Nome_Docente_1"] = "";
                 myDataRow["2°"] = itemA.Seconda;
-                myDataRow["Nome_docente_2"] = "NS";
+                myDataRow["Nome_docente_2"] = "";
                 myDataRow["3°"] = itemA.Terza;
-                myDataRow["Nome_docente_3"] = "NS";
+                myDataRow["Nome_docente_3"] = "";
                 myDataRow["4°"] = itemA.Quarta;
-                myDataRow["Nome_docente_4"] = "NS";
+                myDataRow["Nome_docente_4"] = "";
                 myDataRow["5°"] = itemA.Quinta;
-                myDataRow["Nome_docente_5"] = "NS";
+                myDataRow["Nome_docente_5"] = "";
                 myDataRow["6°"] = itemA.Sesta;
-                myDataRow["Nome_docente_6"] = "NS";
+                myDataRow["Nome_docente_6"] = "";
                 myDataRow["7°"] = itemA.Settima;
-                myDataRow["Nome_docente_7"] = "NS";
+                myDataRow["Nome_docente_7"] = "";
                 myDataRow["8°"] = itemA.Ottava;
-                myDataRow["Nome_docente_8"] = "NS";
+                myDataRow["Nome_docente_8"] = "";
 
                 for (int i = 0; i < listDisponibili.Count(); i++)
                 {
                     structureAssentiDisponibili itemD = listDisponibili[i];
 
-                    if (itemD.Visto1 == false)
+                    //if (itemD.Visto1 == false)
                     {
                         if (itemA.Prima.Length == 0)
                         {
@@ -317,17 +317,19 @@ namespace ReplaceTeacher
                         }
                         else
                         {
+     
                             if (itemD.Prima.Length == 0)
                                 continue;
                             else
                             {
+
                                 if (!itemA.Prima.Equals("P"))
                                 {
                                     if (itemD.Prima.Equals("P"))
                                     {
-                                        myDataRow["Nome_Docente_1"] = itemD.Nome_docente;
+                                        myDataRow["Nome_Docente_1"] += itemD.Nome_docente + ",";
 
-                                        itemD.Visto1 = true;
+                                        //itemD.Visto1 = true;
                                         listDisponibili[i] = itemD;
                                     }
                                 }
@@ -340,7 +342,7 @@ namespace ReplaceTeacher
                 {
                     structureAssentiDisponibili itemD = listDisponibili[i];
 
-                    if (itemD.Visto2 == false)
+                   // if (itemD.Visto2 == false)
                     {
                         if (itemA.Seconda.Length == 0)
                         {
@@ -352,14 +354,14 @@ namespace ReplaceTeacher
                                 continue;
                             else
                             {
-                                if (!itemA.Prima.Equals("P"))
+                                if (!itemA.Seconda.Equals("P"))
                                 {
 
                                     if (itemD.Seconda.Equals("P"))
                                     {
-                                        myDataRow["Nome_Docente_2"] = itemD.Nome_docente;
+                                        myDataRow["Nome_Docente_2"] += itemD.Nome_docente +";";
 
-                                        itemD.Visto2 = true;
+                                        //itemD.Visto2 = true;
                                         listDisponibili[i] = itemD;
                                     }
                                 }
@@ -372,7 +374,7 @@ namespace ReplaceTeacher
                 {
                     structureAssentiDisponibili itemD = listDisponibili[i];
 
-                    if (itemD.Visto3 == false)
+                   // if (itemD.Visto3 == false)
                     {
 
                         if (itemA.Terza.Length == 0)
@@ -386,12 +388,12 @@ namespace ReplaceTeacher
                             else
                             {
 
-                                if (!itemA.Prima.Equals("P"))
+                                if (!itemA.Terza.Equals("P"))
                                 {
 
                                     if (itemD.Terza.Equals("P"))
                                     {
-                                        myDataRow["Nome_Docente_3"] = itemD.Nome_docente;
+                                        myDataRow["Nome_Docente_3"] += itemD.Nome_docente +";";
 
                                         itemD.Visto3 = true;
                                         listDisponibili[i] = itemD;
@@ -406,7 +408,7 @@ namespace ReplaceTeacher
                 {
                     structureAssentiDisponibili itemD = listDisponibili[i];
 
-                    if (itemD.Visto4 == false)
+                   // if (itemD.Visto4 == false)
                     {
 
                         if (itemA.Quarta.Length == 0)
@@ -419,12 +421,12 @@ namespace ReplaceTeacher
                                 continue;
                             else
                             {
-                                if (!itemA.Prima.Equals("P"))
+                                if (!itemA.Quarta.Equals("P"))
                                 {
 
                                     if (itemD.Quarta.Equals("P"))
                                     {
-                                        myDataRow["Nome_Docente_4"] = itemD.Nome_docente;
+                                        myDataRow["Nome_Docente_4"] += itemD.Nome_docente +";";
 
                                         itemD.Visto4 = true;
                                         listDisponibili[i] = itemD;
@@ -439,7 +441,7 @@ namespace ReplaceTeacher
                 {
                     structureAssentiDisponibili itemD = listDisponibili[i];
 
-                    if (itemD.Visto5 == false)
+                  //  if (itemD.Visto5 == false)
                     {
 
                         if (itemA.Quinta.Length != 0)
@@ -452,11 +454,11 @@ namespace ReplaceTeacher
                                 continue;
                             else
                             {
-                                if (!itemA.Prima.Equals("P"))
+                                if (!itemA.Quinta.Equals("P"))
                                 {
                                     if (itemD.Quinta.Equals("P"))
                                     {
-                                        myDataRow["Nome_Docente_5"] = itemD.Nome_docente;
+                                        myDataRow["Nome_Docente_5"]  += itemD.Nome_docente+";";
 
                                         itemD.Visto5 = true;
                                         listDisponibili[i] = itemD;
@@ -471,7 +473,7 @@ namespace ReplaceTeacher
                 {
                     structureAssentiDisponibili itemD = listDisponibili[i];
 
-                    if (itemD.Visto6 == false)
+                   // if (itemD.Visto6 == false)
                     {
                         if (itemA.Sesta.Length == 0)
                         {
@@ -483,11 +485,11 @@ namespace ReplaceTeacher
                                 continue;
                             else
                             {
-                                if (!itemA.Prima.Equals("P"))
+                                if (!itemA.Sesta.Equals("P"))
                                 {
                                     if (itemD.Sesta.Equals("P"))
                                     {
-                                        myDataRow["Nome_Docente_6"] = itemD.Nome_docente;
+                                        myDataRow["Nome_Docente_6"] += itemD.Nome_docente +";";
 
                                         itemD.Visto6 = true;
                                         listDisponibili[i] = itemD;
@@ -503,7 +505,7 @@ namespace ReplaceTeacher
 
                     structureAssentiDisponibili itemD = listDisponibili[i];
 
-                    if (itemD.Visto7 == false)
+                 //   if (itemD.Visto7 == false)
                     {
 
                         if (itemA.Settima.Length == 0)
@@ -516,11 +518,11 @@ namespace ReplaceTeacher
                                 continue;
                             else
                             {
-                                if (!itemA.Prima.Equals("P"))
+                                if (!itemA.Settima.Equals("P"))
                                 {
                                     if (itemD.Settima.Equals("P"))
                                     {
-                                        myDataRow["Nome_Docente_7"] = itemD.Nome_docente;
+                                        myDataRow["Nome_Docente_7"] += itemD.Nome_docente +";";
 
                                         itemD.Visto7 = true;
                                         listDisponibili[i] = itemD;
@@ -536,7 +538,7 @@ namespace ReplaceTeacher
 
                     structureAssentiDisponibili itemD = listDisponibili[i];
 
-                    if (itemD.Visto8 == false)
+                  //  if (itemD.Visto8 == false)
                     {
                         if (itemA.Ottava.Length == 0)
                         {
@@ -552,7 +554,7 @@ namespace ReplaceTeacher
                                 {
                                     if (itemD.Ottava.Equals("P"))
                                     {
-                                        myDataRow["Nome_Docente_8"] = itemD.Nome_docente;
+                                        myDataRow["Nome_Docente_8"] += itemD.Nome_docente +";";
 
                                         itemD.Visto8 = true;
                                         listDisponibili[i] = itemD;
