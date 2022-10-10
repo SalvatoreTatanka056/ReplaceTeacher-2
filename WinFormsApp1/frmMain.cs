@@ -263,6 +263,7 @@ namespace ReplaceTeacher
             m_bdtgridview = false;
 
             DataTable table = new DataTable();
+            table.Columns.Add("Scelta", typeof(bool));
             table.Columns.Add("Giorno", typeof(string));
             table.Columns.Add("Nome_Assente", typeof(string));
             table.Columns.Add("1°", typeof(string));
@@ -281,32 +282,58 @@ namespace ReplaceTeacher
             table.Columns.Add("Nome_Docente_7", typeof(string));
             table.Columns.Add("8°", typeof(string));
             table.Columns.Add("Nome_Docente_8", typeof(string));
+            DataRow myDataRow;
+
 
             foreach (structureAssentiDisponibili itemA in listAssenti)
             {
-                DataRow myDataRow;
-                myDataRow = table.NewRow();
-                myDataRow["Giorno"] = dateTimePicker1.Value.DayOfWeek.ToString();
-                myDataRow["Nome_Assente"] = itemA.Nome_docente;
-                myDataRow["1°"] = itemA.Prima;
-                myDataRow["Nome_Docente_1"] = "";
-                myDataRow["2°"] = itemA.Seconda;
-                myDataRow["Nome_docente_2"] = "";
-                myDataRow["3°"] = itemA.Terza;
-                myDataRow["Nome_docente_3"] = "";
-                myDataRow["4°"] = itemA.Quarta;
-                myDataRow["Nome_docente_4"] = "";
-                myDataRow["5°"] = itemA.Quinta;
-                myDataRow["Nome_docente_5"] = "";
-                myDataRow["6°"] = itemA.Sesta;
-                myDataRow["Nome_docente_6"] = "";
-                myDataRow["7°"] = itemA.Settima;
-                myDataRow["Nome_docente_7"] = "";
-                myDataRow["8°"] = itemA.Ottava;
-                myDataRow["Nome_docente_8"] = "";
+                
+                //myDataRow = table.NewRow();
+                //myDataRow["Giorno"] = dateTimePicker1.Value.DayOfWeek.ToString();
+                //myDataRow["Nome_Assente"] = itemA.Nome_docente;
+                //myDataRow["1°"] = itemA.Prima;
+                //myDataRow["Nome_Docente_1"] = "";
+                //myDataRow["2°"] = itemA.Seconda;
+                //myDataRow["Nome_docente_2"] = "";
+                //myDataRow["3°"] = itemA.Terza;
+                //myDataRow["Nome_docente_3"] = "";
+                //myDataRow["4°"] = itemA.Quarta;
+                //myDataRow["Nome_docente_4"] = "";
+                //myDataRow["5°"] = itemA.Quinta;
+                //myDataRow["Nome_docente_5"] = "";
+                //myDataRow["6°"] = itemA.Sesta;
+                //myDataRow["Nome_docente_6"] = "";
+                //myDataRow["7°"] = itemA.Settima;
+                //myDataRow["Nome_docente_7"] = "";
+                //myDataRow["8°"] = itemA.Ottava;
+                //myDataRow["Nome_docente_8"] = "";
 
                 for (int i = 0; i < listDisponibili.Count(); i++)
                 {
+
+                   // DataRow myDataRow;
+                    myDataRow = table.NewRow();
+                    myDataRow["Scelta"] = false;
+                    myDataRow["Giorno"] = dateTimePicker1.Value.DayOfWeek.ToString();
+                    myDataRow["Nome_Assente"] = itemA.Nome_docente;
+                    myDataRow["1°"] = itemA.Prima;
+                    myDataRow["Nome_Docente_1"] = "";
+                    myDataRow["2°"] = itemA.Seconda;
+                    myDataRow["Nome_docente_2"] = "";
+                    myDataRow["3°"] = itemA.Terza;
+                    myDataRow["Nome_docente_3"] = "";
+                    myDataRow["4°"] = itemA.Quarta;
+                    myDataRow["Nome_docente_4"] = "";
+                    myDataRow["5°"] = itemA.Quinta;
+                    myDataRow["Nome_docente_5"] = "";
+                    myDataRow["6°"] = itemA.Sesta;
+                    myDataRow["Nome_docente_6"] = "";
+                    myDataRow["7°"] = itemA.Settima;
+                    myDataRow["Nome_docente_7"] = "";
+                    myDataRow["8°"] = itemA.Ottava;
+                    myDataRow["Nome_docente_8"] = "";
+
+
                     structureAssentiDisponibili itemD = listDisponibili[i];
 
                     //if (itemD.Visto1 == false)
@@ -327,10 +354,12 @@ namespace ReplaceTeacher
                                 {
                                     if (itemD.Prima.Equals("P"))
                                     {
-                                        myDataRow["Nome_Docente_1"] += itemD.Nome_docente + ",";
+                                        myDataRow["Nome_Docente_1"] = itemD.Nome_docente;
+                                        
 
                                         //itemD.Visto1 = true;
                                         listDisponibili[i] = itemD;
+                                        table.Rows.Add(myDataRow);
                                     }
                                 }
                             }
@@ -340,6 +369,28 @@ namespace ReplaceTeacher
 
                 for (int i = 0; i < listDisponibili.Count(); i++)
                 {
+
+                    myDataRow = table.NewRow();
+                    myDataRow["Scelta"] = false;
+                    myDataRow["Giorno"] = dateTimePicker1.Value.DayOfWeek.ToString();
+                    myDataRow["Nome_Assente"] = itemA.Nome_docente;
+                    myDataRow["1°"] = itemA.Prima;
+                    myDataRow["Nome_Docente_1"] = "";
+                    myDataRow["2°"] = itemA.Seconda;
+                    myDataRow["Nome_docente_2"] = "";
+                    myDataRow["3°"] = itemA.Terza;
+                    myDataRow["Nome_docente_3"] = "";
+                    myDataRow["4°"] = itemA.Quarta;
+                    myDataRow["Nome_docente_4"] = "";
+                    myDataRow["5°"] = itemA.Quinta;
+                    myDataRow["Nome_docente_5"] = "";
+                    myDataRow["6°"] = itemA.Sesta;
+                    myDataRow["Nome_docente_6"] = "";
+                    myDataRow["7°"] = itemA.Settima;
+                    myDataRow["Nome_docente_7"] = "";
+                    myDataRow["8°"] = itemA.Ottava;
+                    myDataRow["Nome_docente_8"] = "";
+
                     structureAssentiDisponibili itemD = listDisponibili[i];
 
                    // if (itemD.Visto2 == false)
@@ -359,7 +410,8 @@ namespace ReplaceTeacher
 
                                     if (itemD.Seconda.Equals("P"))
                                     {
-                                        myDataRow["Nome_Docente_2"] += itemD.Nome_docente +";";
+                                        myDataRow["Nome_Docente_2"] = itemD.Nome_docente ;
+                                        table.Rows.Add(myDataRow);
 
                                         //itemD.Visto2 = true;
                                         listDisponibili[i] = itemD;
@@ -372,6 +424,27 @@ namespace ReplaceTeacher
 
                 for (int i = 0; i < listDisponibili.Count(); i++)
                 {
+                    myDataRow = table.NewRow();
+                    myDataRow["Scelta"] = false;
+                    myDataRow["Giorno"] = dateTimePicker1.Value.DayOfWeek.ToString();
+                    myDataRow["Nome_Assente"] = itemA.Nome_docente;
+                    myDataRow["1°"] = itemA.Prima;
+                    myDataRow["Nome_Docente_1"] = "";
+                    myDataRow["2°"] = itemA.Seconda;
+                    myDataRow["Nome_docente_2"] = "";
+                    myDataRow["3°"] = itemA.Terza;
+                    myDataRow["Nome_docente_3"] = "";
+                    myDataRow["4°"] = itemA.Quarta;
+                    myDataRow["Nome_docente_4"] = "";
+                    myDataRow["5°"] = itemA.Quinta;
+                    myDataRow["Nome_docente_5"] = "";
+                    myDataRow["6°"] = itemA.Sesta;
+                    myDataRow["Nome_docente_6"] = "";
+                    myDataRow["7°"] = itemA.Settima;
+                    myDataRow["Nome_docente_7"] = "";
+                    myDataRow["8°"] = itemA.Ottava;
+                    myDataRow["Nome_docente_8"] = "";
+
                     structureAssentiDisponibili itemD = listDisponibili[i];
 
                    // if (itemD.Visto3 == false)
@@ -393,7 +466,8 @@ namespace ReplaceTeacher
 
                                     if (itemD.Terza.Equals("P"))
                                     {
-                                        myDataRow["Nome_Docente_3"] += itemD.Nome_docente +";";
+                                        myDataRow["Nome_Docente_3"] += itemD.Nome_docente ;
+                                        table.Rows.Add(myDataRow);
 
                                         //itemD.Visto3 = true;
                                         listDisponibili[i] = itemD;
@@ -406,6 +480,27 @@ namespace ReplaceTeacher
 
                 for (int i = 0; i < listDisponibili.Count(); i++)
                 {
+                    myDataRow = table.NewRow();
+                    myDataRow["Scelta"] = false;
+                    myDataRow["Giorno"] = dateTimePicker1.Value.DayOfWeek.ToString();
+                    myDataRow["Nome_Assente"] = itemA.Nome_docente;
+                    myDataRow["1°"] = itemA.Prima;
+                    myDataRow["Nome_Docente_1"] = "";
+                    myDataRow["2°"] = itemA.Seconda;
+                    myDataRow["Nome_docente_2"] = "";
+                    myDataRow["3°"] = itemA.Terza;
+                    myDataRow["Nome_docente_3"] = "";
+                    myDataRow["4°"] = itemA.Quarta;
+                    myDataRow["Nome_docente_4"] = "";
+                    myDataRow["5°"] = itemA.Quinta;
+                    myDataRow["Nome_docente_5"] = "";
+                    myDataRow["6°"] = itemA.Sesta;
+                    myDataRow["Nome_docente_6"] = "";
+                    myDataRow["7°"] = itemA.Settima;
+                    myDataRow["Nome_docente_7"] = "";
+                    myDataRow["8°"] = itemA.Ottava;
+                    myDataRow["Nome_docente_8"] = "";
+
                     structureAssentiDisponibili itemD = listDisponibili[i];
 
                    // if (itemD.Visto4 == false)
@@ -423,10 +518,10 @@ namespace ReplaceTeacher
                             {
                                 if (!itemA.Quarta.Equals("P"))
                                 {
-
                                     if (itemD.Quarta.Equals("P"))
                                     {
-                                        myDataRow["Nome_Docente_4"] += itemD.Nome_docente +";";
+                                        myDataRow["Nome_Docente_4"] += itemD.Nome_docente ;
+                                        table.Rows.Add(myDataRow);
 
                                         //itemD.Visto4 = true;
                                         listDisponibili[i] = itemD;
@@ -439,6 +534,27 @@ namespace ReplaceTeacher
 
                 for (int i = 0; i < listDisponibili.Count(); i++)
                 {
+                    myDataRow = table.NewRow();
+                    myDataRow["Scelta"] = false;
+                    myDataRow["Giorno"] = dateTimePicker1.Value.DayOfWeek.ToString();
+                    myDataRow["Nome_Assente"] = itemA.Nome_docente;
+                    myDataRow["1°"] = itemA.Prima;
+                    myDataRow["Nome_Docente_1"] = "";
+                    myDataRow["2°"] = itemA.Seconda;
+                    myDataRow["Nome_docente_2"] = "";
+                    myDataRow["3°"] = itemA.Terza;
+                    myDataRow["Nome_docente_3"] = "";
+                    myDataRow["4°"] = itemA.Quarta;
+                    myDataRow["Nome_docente_4"] = "";
+                    myDataRow["5°"] = itemA.Quinta;
+                    myDataRow["Nome_docente_5"] = "";
+                    myDataRow["6°"] = itemA.Sesta;
+                    myDataRow["Nome_docente_6"] = "";
+                    myDataRow["7°"] = itemA.Settima;
+                    myDataRow["Nome_docente_7"] = "";
+                    myDataRow["8°"] = itemA.Ottava;
+                    myDataRow["Nome_docente_8"] = "";
+
                     structureAssentiDisponibili itemD = listDisponibili[i];
 
                   //  if (itemD.Visto5 == false)
@@ -458,7 +574,8 @@ namespace ReplaceTeacher
                                 {
                                     if (itemD.Quinta.Equals("P"))
                                     {
-                                        myDataRow["Nome_Docente_5"]  += itemD.Nome_docente+";";
+                                        myDataRow["Nome_Docente_5"]  += itemD.Nome_docente;
+                                        table.Rows.Add(myDataRow);
 
                                         //itemD.Visto5 = true;
                                         listDisponibili[i] = itemD;
@@ -471,6 +588,27 @@ namespace ReplaceTeacher
 
                 for (int i = 0; i < listDisponibili.Count(); i++)
                 {
+                    myDataRow = table.NewRow();
+                    myDataRow["Scelta"] = false;
+                    myDataRow["Giorno"] = dateTimePicker1.Value.DayOfWeek.ToString();
+                    myDataRow["Nome_Assente"] = itemA.Nome_docente;
+                    myDataRow["1°"] = itemA.Prima;
+                    myDataRow["Nome_Docente_1"] = "";
+                    myDataRow["2°"] = itemA.Seconda;
+                    myDataRow["Nome_docente_2"] = "";
+                    myDataRow["3°"] = itemA.Terza;
+                    myDataRow["Nome_docente_3"] = "";
+                    myDataRow["4°"] = itemA.Quarta;
+                    myDataRow["Nome_docente_4"] = "";
+                    myDataRow["5°"] = itemA.Quinta;
+                    myDataRow["Nome_docente_5"] = "";
+                    myDataRow["6°"] = itemA.Sesta;
+                    myDataRow["Nome_docente_6"] = "";
+                    myDataRow["7°"] = itemA.Settima;
+                    myDataRow["Nome_docente_7"] = "";
+                    myDataRow["8°"] = itemA.Ottava;
+                    myDataRow["Nome_docente_8"] = "";
+
                     structureAssentiDisponibili itemD = listDisponibili[i];
 
                    // if (itemD.Visto6 == false)
@@ -489,7 +627,8 @@ namespace ReplaceTeacher
                                 {
                                     if (itemD.Sesta.Equals("P"))
                                     {
-                                        myDataRow["Nome_Docente_6"] += itemD.Nome_docente +";";
+                                        myDataRow["Nome_Docente_6"] += itemD.Nome_docente ;
+                                        table.Rows.Add(myDataRow);
 
                                         //itemD.Visto6 = true;
                                         listDisponibili[i] = itemD;
@@ -502,6 +641,27 @@ namespace ReplaceTeacher
 
                 for (int i = 0; i < listDisponibili.Count(); i++)
                 {
+                    myDataRow = table.NewRow();
+                    myDataRow["Scelta"] = false;
+                    myDataRow["Giorno"] = dateTimePicker1.Value.DayOfWeek.ToString();
+                    myDataRow["Nome_Assente"] = itemA.Nome_docente;
+                    myDataRow["1°"] = itemA.Prima;
+                    myDataRow["Nome_Docente_1"] = "";
+                    myDataRow["2°"] = itemA.Seconda;
+                    myDataRow["Nome_docente_2"] = "";
+                    myDataRow["3°"] = itemA.Terza;
+                    myDataRow["Nome_docente_3"] = "";
+                    myDataRow["4°"] = itemA.Quarta;
+                    myDataRow["Nome_docente_4"] = "";
+                    myDataRow["5°"] = itemA.Quinta;
+                    myDataRow["Nome_docente_5"] = "";
+                    myDataRow["6°"] = itemA.Sesta;
+                    myDataRow["Nome_docente_6"] = "";
+                    myDataRow["7°"] = itemA.Settima;
+                    myDataRow["Nome_docente_7"] = "";
+                    myDataRow["8°"] = itemA.Ottava;
+                    myDataRow["Nome_docente_8"] = "";
+
 
                     structureAssentiDisponibili itemD = listDisponibili[i];
 
@@ -522,7 +682,8 @@ namespace ReplaceTeacher
                                 {
                                     if (itemD.Settima.Equals("P"))
                                     {
-                                        myDataRow["Nome_Docente_7"] += itemD.Nome_docente +";";
+                                        myDataRow["Nome_Docente_7"] += itemD.Nome_docente ;
+                                        table.Rows.Add(myDataRow);
 
                                         //itemD.Visto7 = true;
                                         listDisponibili[i] = itemD;
@@ -535,6 +696,27 @@ namespace ReplaceTeacher
 
                 for (int i = 0; i < listDisponibili.Count(); i++)
                 {
+                    myDataRow = table.NewRow();
+                    myDataRow["Scelta"] = false;
+                    myDataRow["Giorno"] = dateTimePicker1.Value.DayOfWeek.ToString();
+                    myDataRow["Nome_Assente"] = itemA.Nome_docente;
+                    myDataRow["1°"] = itemA.Prima;
+                    myDataRow["Nome_Docente_1"] = "";
+                    myDataRow["2°"] = itemA.Seconda;
+                    myDataRow["Nome_docente_2"] = "";
+                    myDataRow["3°"] = itemA.Terza;
+                    myDataRow["Nome_docente_3"] = "";
+                    myDataRow["4°"] = itemA.Quarta;
+                    myDataRow["Nome_docente_4"] = "";
+                    myDataRow["5°"] = itemA.Quinta;
+                    myDataRow["Nome_docente_5"] = "";
+                    myDataRow["6°"] = itemA.Sesta;
+                    myDataRow["Nome_docente_6"] = "";
+                    myDataRow["7°"] = itemA.Settima;
+                    myDataRow["Nome_docente_7"] = "";
+                    myDataRow["8°"] = itemA.Ottava;
+                    myDataRow["Nome_docente_8"] = "";
+
 
                     structureAssentiDisponibili itemD = listDisponibili[i];
 
@@ -554,7 +736,8 @@ namespace ReplaceTeacher
                                 {
                                     if (itemD.Ottava.Equals("P"))
                                     {
-                                        myDataRow["Nome_Docente_8"] += itemD.Nome_docente +";";
+                                        myDataRow["Nome_Docente_8"] += itemD.Nome_docente;
+                                        table.Rows.Add(myDataRow);
 
                                         //itemD.Visto8 = true;
                                         listDisponibili[i] = itemD;
@@ -565,7 +748,7 @@ namespace ReplaceTeacher
                     }
                 }
 
-                table.Rows.Add(myDataRow);
+               // table.Rows.Add(myDataRow);
             }
             dataGridView2.DataSource = table;
 
