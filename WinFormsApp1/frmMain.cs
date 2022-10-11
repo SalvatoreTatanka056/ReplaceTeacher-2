@@ -108,7 +108,7 @@ namespace ReplaceTeacher
             reader.Dispose();
 
             OracleCommand cmdC = conn.CreateCommand();
-            //cmdC.CommandText = @"select * from  calendario_lezioni";
+           
             cmdC.CommandText = @"select * from calendario_lezioni";
             OracleDataReader readerC = cmdC.ExecuteReader();
             DataTable dtC = new DataTable();
@@ -758,25 +758,9 @@ namespace ReplaceTeacher
                         }
                     }
                 }
-
-               // table.Rows.Add(myDataRow);
             }
-            dataGridView2.DataSource = table;
 
-            /* for (int x = 0; x < dataGridView2.Rows.Count; x++)
-             {
-                 for (int y = 0; y < dataGridView2.Rows[x].Cells.Count; y++)
-                 {
-                     if (dataGridView2.Rows[x].Cells[y].Value != null)
-                     {
-                         if (dataGridView2.Rows[x].Cells[y].Value.Equals("NS"))
-                         {
-                             int col = dataGridView2.Rows[x].Cells[y].ColumnIndex;
-                             dataGridView2.Columns[col].Width = 0;
-                         }
-                     }
-                 }
-             }*/
+            dataGridView2.DataSource = table;
 
             m_bdtgridview = true;
 
@@ -792,10 +776,10 @@ namespace ReplaceTeacher
                     switch (row.RowState)
                     {
                         case DataRowState.Added:
-                            // to do INSERT QUERY
+                           
                             break;
                         case DataRowState.Deleted:
-                            // to do DELETE QUERY
+                            
                             break;
                         case DataRowState.Modified:
                             OracleCommand cmd = conn.CreateCommand();
@@ -818,53 +802,43 @@ namespace ReplaceTeacher
         {
 
 
-          /*  foreach (structureAssentiDisponibili itemA in listAssenti)
+          /*  DataTable table2 = new DataTable();
+            
+            if (table != null)
             {
-                foreach (structureAssentiDisponibili itemD in listDisponibili)
+                foreach (DataRow item in table.Rows)
                 {
+                    if (item.Field<bool>("Scelta") == true)
+                    {
+                        if (!item.Field<String>("Nome_Docente_1").Equals(""))
+                        {
+                            table2.Rows.Add(item);
+
+                        }
+                    }
 
                 }
-            }*/
-                /*DataTable table2 = new DataTable();
-                if (table != null)
-                {
-                    foreach (DataRow item in table.Rows)
-                    {
-                        if (item.Field<bool>("Scelta") == true)
-                        {
-                            if(!item.Field<String>("Nome_Docente_1").Equals(""))
-                            {
-                                table2.Rows.Add(item);
-
-                            }
-                        }
-
-                    }
-                }*/
+            } */
+            
 
 
-                /* foreach (DataGridViewColumn column in dataGridView2.Columns)
-                 {
-                     //Adding DataRow.
-                     foreach (DataGridViewRow row in dataGridView2.Rows)
-                     {
-                         foreach (DataGridViewCell cell in row.Cells)
-                         {
+            /*foreach (structureAssentiDisponibili itemA in listAssenti)
+           {
+                  foreach (structureAssentiDisponibili itemD in listDisponibili)
+                  {
 
-                         }
+                  }
+              }
 
-                     }
-                 }*
-                         ExportGridToword();
 
-                 /*printPreviewDialog1.ShowDialog();
-                 if (printDialog1.ShowDialog() == DialogResult.OK)
-                 {
-                     //printDocument1.Print();
-                 }*/
-            }
+              ExportGridToword();
 
-            private void dataGridView2_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+
+             */
+
+        }
+
+        private void dataGridView2_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             e.CellStyle.BackColor = Color.Pink;
 
