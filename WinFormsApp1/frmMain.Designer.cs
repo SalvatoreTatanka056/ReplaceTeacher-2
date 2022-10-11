@@ -151,7 +151,6 @@
             this.splitContainer3.Size = new System.Drawing.Size(1368, 299);
             this.splitContainer3.SplitterDistance = 120;
             this.splitContainer3.TabIndex = 22;
-            this.splitContainer3.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer3_SplitterMoved);
             // 
             // splitContainer4
             // 
@@ -223,7 +222,6 @@
             this.dataGridView2.RowTemplate.Height = 25;
             this.dataGridView2.Size = new System.Drawing.Size(1368, 175);
             this.dataGridView2.TabIndex = 22;
-            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             this.dataGridView2.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView2_CellFormatting);
             // 
             // splitContainer2

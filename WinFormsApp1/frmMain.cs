@@ -291,32 +291,10 @@ namespace ReplaceTeacher
 
             foreach (structureAssentiDisponibili itemA in listAssenti)
             {
-                
-                //myDataRow = table.NewRow();
-                //myDataRow["Giorno"] = dateTimePicker1.Value.DayOfWeek.ToString();
-                //myDataRow["Nome_Assente"] = itemA.Nome_docente;
-                //myDataRow["1°"] = itemA.Prima;
-                //myDataRow["Nome_Docente_1"] = "";
-                //myDataRow["2°"] = itemA.Seconda;
-                //myDataRow["Nome_docente_2"] = "";
-                //myDataRow["3°"] = itemA.Terza;
-                //myDataRow["Nome_docente_3"] = "";
-                //myDataRow["4°"] = itemA.Quarta;
-                //myDataRow["Nome_docente_4"] = "";
-                //myDataRow["5°"] = itemA.Quinta;
-                //myDataRow["Nome_docente_5"] = "";
-                //myDataRow["6°"] = itemA.Sesta;
-                //myDataRow["Nome_docente_6"] = "";
-                //myDataRow["7°"] = itemA.Settima;
-                //myDataRow["Nome_docente_7"] = "";
-                //myDataRow["8°"] = itemA.Ottava;
-                //myDataRow["Nome_docente_8"] = "";
 
                 for (int i = 0; i < listDisponibili.Count(); i++)
                 {
-
-                   // DataRow myDataRow;
-                    myDataRow = table.NewRow();
+               myDataRow = table.NewRow();
                     myDataRow["Scelta"] = false;
                     myDataRow["Giorno"] = dateTimePicker1.Value.DayOfWeek.ToString();
                     myDataRow["Nome_Assente"] = itemA.Nome_docente;
@@ -340,7 +318,6 @@ namespace ReplaceTeacher
 
                     structureAssentiDisponibili itemD = listDisponibili[i];
 
-                    //if (itemD.Visto1 == false)
                     {
                         if (itemA.Prima.Length == 0)
                         {
@@ -397,7 +374,6 @@ namespace ReplaceTeacher
 
                     structureAssentiDisponibili itemD = listDisponibili[i];
 
-                   // if (itemD.Visto2 == false)
                     {
                         if (itemA.Seconda.Length == 0)
                         {
@@ -416,8 +392,6 @@ namespace ReplaceTeacher
                                     {
                                         myDataRow["Nome_Docente_2"] = itemD.Nome_docente ;
                                        
-
-                                        //itemD.Visto2 = true;
                                         listDisponibili[i] = itemD;
                                         table.Rows.Add(myDataRow);
                                     }
@@ -452,7 +426,6 @@ namespace ReplaceTeacher
 
                     structureAssentiDisponibili itemD = listDisponibili[i];
 
-                   // if (itemD.Visto3 == false)
                     {
 
                         if (itemA.Terza.Length == 0)
@@ -474,7 +447,6 @@ namespace ReplaceTeacher
                                         myDataRow["Nome_Docente_3"] += itemD.Nome_docente ;
                                        
 
-                                        //itemD.Visto3 = true;
                                         listDisponibili[i] = itemD;
                                         table.Rows.Add(myDataRow);
                                     }
@@ -509,7 +481,6 @@ namespace ReplaceTeacher
 
                     structureAssentiDisponibili itemD = listDisponibili[i];
 
-                   // if (itemD.Visto4 == false)
                     {
 
                         if (itemA.Quarta.Length == 0)
@@ -529,7 +500,6 @@ namespace ReplaceTeacher
                                         myDataRow["Nome_Docente_4"] += itemD.Nome_docente ;
                                        
 
-                                        //itemD.Visto4 = true;
                                         listDisponibili[i] = itemD;
                                         table.Rows.Add(myDataRow);
                                     }
@@ -564,7 +534,6 @@ namespace ReplaceTeacher
 
                     structureAssentiDisponibili itemD = listDisponibili[i];
 
-                  //  if (itemD.Visto5 == false)
                     {
 
                         if (itemA.Quinta.Length != 0)
@@ -583,8 +552,6 @@ namespace ReplaceTeacher
                                     {
                                         myDataRow["Nome_Docente_5"]  += itemD.Nome_docente;
                                         
-
-                                        //itemD.Visto5 = true;
                                         listDisponibili[i] = itemD;
                                         table.Rows.Add(myDataRow);
                                     }
@@ -619,7 +586,6 @@ namespace ReplaceTeacher
 
                     structureAssentiDisponibili itemD = listDisponibili[i];
 
-                   // if (itemD.Visto6 == false)
                     {
                         if (itemA.Sesta.Length == 0)
                         {
@@ -638,7 +604,6 @@ namespace ReplaceTeacher
                                         myDataRow["Nome_Docente_6"] += itemD.Nome_docente ;
                                         
 
-                                        //itemD.Visto6 = true;
                                         listDisponibili[i] = itemD;
                                         table.Rows.Add(myDataRow);
                                     }
@@ -674,7 +639,6 @@ namespace ReplaceTeacher
 
                     structureAssentiDisponibili itemD = listDisponibili[i];
 
-                 //   if (itemD.Visto7 == false)
                     {
 
                         if (itemA.Settima.Length == 0)
@@ -694,7 +658,6 @@ namespace ReplaceTeacher
                                         myDataRow["Nome_Docente_7"] += itemD.Nome_docente ;
                                         
 
-                                        //itemD.Visto7 = true;
                                         listDisponibili[i] = itemD;
                                         table.Rows.Add(myDataRow);
                                     }
@@ -730,7 +693,6 @@ namespace ReplaceTeacher
 
                     structureAssentiDisponibili itemD = listDisponibili[i];
 
-                  //  if (itemD.Visto8 == false)
                     {
                         if (itemA.Ottava.Length == 0)
                         {
@@ -749,7 +711,6 @@ namespace ReplaceTeacher
                                         myDataRow["Nome_Docente_8"] += itemD.Nome_docente;
                                         
 
-                                        //itemD.Visto8 = true;
                                         listDisponibili[i] = itemD;
                                         table.Rows.Add(myDataRow);
                                     }
@@ -878,10 +839,10 @@ namespace ReplaceTeacher
                     switch (row.RowState)
                     {
                         case DataRowState.Added:
-                            // to do INSERT QUERY
+                            
                             break;
                         case DataRowState.Deleted:
-                            // to do DELETE QUERY
+                            
                             break;
                         case DataRowState.Modified:
                             OracleCommand cmd = conn.CreateCommand();
@@ -925,10 +886,10 @@ namespace ReplaceTeacher
         private void ExportGridToword()
         {
 
-            //Table start.
+           
             string html = "<table cellpadding='5' cellspacing='0' style='border: 1px solid #ccc;font-size: 9pt;font-family:arial'>";
 
-            //Adding HeaderRow.
+        
             html += "<tr>";
             foreach (DataGridViewColumn column in dataGridView2.Columns)
             {
@@ -936,7 +897,7 @@ namespace ReplaceTeacher
             }
             html += "</tr>";
 
-            //Adding DataRow.
+           
             foreach (DataGridViewRow row in dataGridView2.Rows)
             {
                 html += "<tr>";
@@ -948,7 +909,7 @@ namespace ReplaceTeacher
                 html += "</tr>";
             }
 
-            //Table end.
+           
             html += "</table>";
 
             File.WriteAllText(@"DataGridView.htm", html);
@@ -971,24 +932,6 @@ namespace ReplaceTeacher
 
         }
 
-        private void splitContainer4_SplitterMoved(object sender, SplitterEventArgs e)
-        {
-
-        }
-
-        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void splitContainer3_SplitterMoved(object sender, SplitterEventArgs e)
-        {
-
-        }
-
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+  
     }
 }
