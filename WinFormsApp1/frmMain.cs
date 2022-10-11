@@ -31,8 +31,7 @@ namespace ReplaceTeacher
         string quinta,
         string sesta,
         string settima,
-        string ottava,
-        bool visto)
+        string ottava)
         {
             Nome_docente = nome_docente;
             Prima = prima;
@@ -51,6 +50,7 @@ namespace ReplaceTeacher
             Visto6 = false;
             Visto7 = false;
             Visto8 = false;
+            Scelto = false;
         }
 
         public string Nome_docente { get; init; }
@@ -70,6 +70,7 @@ namespace ReplaceTeacher
         public bool Visto6 { get; set; }
         public bool Visto7 { get; set; }
         public bool Visto8 { get; set; }
+        public bool Scelto { get; set; }
     }
 
     public partial class frmMain : Form
@@ -77,6 +78,7 @@ namespace ReplaceTeacher
         List<structureAssentiDisponibili> listDisponibili;
         List<structureAssentiDisponibili> listAssenti;
         OracleConnection conn;
+        public DataTable table;
 
         public bool m_bdtgridview = false;
 
@@ -180,7 +182,7 @@ namespace ReplaceTeacher
                 }
 
                 structureAssentiDisponibili assentiDisponibili = new structureAssentiDisponibili(reader.GetString(custIdCol1),
-                                            p2, p3, p4, p5, p6, p7, p8, p9, false);
+                                            p2, p3, p4, p5, p6, p7, p8, p9);
 
                 listAssenti.Add(assentiDisponibili);
             }
@@ -246,13 +248,15 @@ namespace ReplaceTeacher
                     p9 = reader.GetString(custIdCol9);
                 }
 
-                structureAssentiDisponibili assentiDisponibili = new structureAssentiDisponibili(reader.GetString(custIdCol1), p2, p3, p4, p5, p6, p7, p8, p9, false);
+                structureAssentiDisponibili assentiDisponibili = new structureAssentiDisponibili(reader.GetString(custIdCol1), p2, p3, p4, p5, p6, p7, p8, p9);
 
                 listDisponibili.Add(assentiDisponibili);
             }
             cmd.Dispose();
             reader.Dispose();
         }
+
+      
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -262,7 +266,7 @@ namespace ReplaceTeacher
 
             m_bdtgridview = false;
 
-            DataTable table = new DataTable();
+            table = new DataTable();
             table.Columns.Add("Scelta", typeof(bool));
             table.Columns.Add("Giorno", typeof(string));
             table.Columns.Add("Nome_Assente", typeof(string));
@@ -411,10 +415,11 @@ namespace ReplaceTeacher
                                     if (itemD.Seconda.Equals("P"))
                                     {
                                         myDataRow["Nome_Docente_2"] = itemD.Nome_docente ;
-                                        table.Rows.Add(myDataRow);
+                                       
 
                                         //itemD.Visto2 = true;
                                         listDisponibili[i] = itemD;
+                                        table.Rows.Add(myDataRow);
                                     }
                                 }
                             }
@@ -467,10 +472,11 @@ namespace ReplaceTeacher
                                     if (itemD.Terza.Equals("P"))
                                     {
                                         myDataRow["Nome_Docente_3"] += itemD.Nome_docente ;
-                                        table.Rows.Add(myDataRow);
+                                       
 
                                         //itemD.Visto3 = true;
                                         listDisponibili[i] = itemD;
+                                        table.Rows.Add(myDataRow);
                                     }
                                 }
                             }
@@ -521,10 +527,11 @@ namespace ReplaceTeacher
                                     if (itemD.Quarta.Equals("P"))
                                     {
                                         myDataRow["Nome_Docente_4"] += itemD.Nome_docente ;
-                                        table.Rows.Add(myDataRow);
+                                       
 
                                         //itemD.Visto4 = true;
                                         listDisponibili[i] = itemD;
+                                        table.Rows.Add(myDataRow);
                                     }
                                 }
                             }
@@ -575,10 +582,11 @@ namespace ReplaceTeacher
                                     if (itemD.Quinta.Equals("P"))
                                     {
                                         myDataRow["Nome_Docente_5"]  += itemD.Nome_docente;
-                                        table.Rows.Add(myDataRow);
+                                        
 
                                         //itemD.Visto5 = true;
                                         listDisponibili[i] = itemD;
+                                        table.Rows.Add(myDataRow);
                                     }
                                 }
                             }
@@ -628,10 +636,11 @@ namespace ReplaceTeacher
                                     if (itemD.Sesta.Equals("P"))
                                     {
                                         myDataRow["Nome_Docente_6"] += itemD.Nome_docente ;
-                                        table.Rows.Add(myDataRow);
+                                        
 
                                         //itemD.Visto6 = true;
                                         listDisponibili[i] = itemD;
+                                        table.Rows.Add(myDataRow);
                                     }
                                 }
                             }
@@ -683,10 +692,11 @@ namespace ReplaceTeacher
                                     if (itemD.Settima.Equals("P"))
                                     {
                                         myDataRow["Nome_Docente_7"] += itemD.Nome_docente ;
-                                        table.Rows.Add(myDataRow);
+                                        
 
                                         //itemD.Visto7 = true;
                                         listDisponibili[i] = itemD;
+                                        table.Rows.Add(myDataRow);
                                     }
                                 }
                             }
@@ -737,10 +747,11 @@ namespace ReplaceTeacher
                                     if (itemD.Ottava.Equals("P"))
                                     {
                                         myDataRow["Nome_Docente_8"] += itemD.Nome_docente;
-                                        table.Rows.Add(myDataRow);
+                                        
 
                                         //itemD.Visto8 = true;
                                         listDisponibili[i] = itemD;
+                                        table.Rows.Add(myDataRow);
                                     }
                                 }
                             }
@@ -802,19 +813,58 @@ namespace ReplaceTeacher
             }
         }
 
-
+ 
         private void button2_Click(object sender, EventArgs e)
         {
-            ExportGridToword();
 
-            /*printPreviewDialog1.ShowDialog();
-            if (printDialog1.ShowDialog() == DialogResult.OK)
+
+          /*  foreach (structureAssentiDisponibili itemA in listAssenti)
             {
-                //printDocument1.Print();
-            }*/
-        }
+                foreach (structureAssentiDisponibili itemD in listDisponibili)
+                {
 
-        private void dataGridView2_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+                }
+            }*/
+                /*DataTable table2 = new DataTable();
+                if (table != null)
+                {
+                    foreach (DataRow item in table.Rows)
+                    {
+                        if (item.Field<bool>("Scelta") == true)
+                        {
+                            if(!item.Field<String>("Nome_Docente_1").Equals(""))
+                            {
+                                table2.Rows.Add(item);
+
+                            }
+                        }
+
+                    }
+                }*/
+
+
+                /* foreach (DataGridViewColumn column in dataGridView2.Columns)
+                 {
+                     //Adding DataRow.
+                     foreach (DataGridViewRow row in dataGridView2.Rows)
+                     {
+                         foreach (DataGridViewCell cell in row.Cells)
+                         {
+
+                         }
+
+                     }
+                 }*
+                         ExportGridToword();
+
+                 /*printPreviewDialog1.ShowDialog();
+                 if (printDialog1.ShowDialog() == DialogResult.OK)
+                 {
+                     //printDocument1.Print();
+                 }*/
+            }
+
+            private void dataGridView2_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             e.CellStyle.BackColor = Color.Pink;
 
@@ -958,6 +1008,11 @@ namespace ReplaceTeacher
         }
 
         private void splitContainer3_SplitterMoved(object sender, SplitterEventArgs e)
+        {
+
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

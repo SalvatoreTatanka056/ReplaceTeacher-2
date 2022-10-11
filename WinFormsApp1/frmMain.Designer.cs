@@ -178,9 +178,9 @@
             this.panel2.Controls.Add(this.dateTimePicker1);
             this.panel2.Controls.Add(this.button3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(712, 0);
+            this.panel2.Location = new System.Drawing.Point(688, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(341, 118);
+            this.panel2.Size = new System.Drawing.Size(365, 118);
             this.panel2.TabIndex = 0;
             // 
             // button2
@@ -223,6 +223,7 @@
             this.dataGridView2.RowTemplate.Height = 25;
             this.dataGridView2.Size = new System.Drawing.Size(1368, 175);
             this.dataGridView2.TabIndex = 22;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             this.dataGridView2.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView2_CellFormatting);
             // 
             // splitContainer2
