@@ -875,11 +875,15 @@ namespace ReplaceTeacher
                 }
             }
 
-            dataGridView2.DataSource = table2;
+          dataGridView2.DataSource = table2;
 
-           ExportGridToword();
+            //Compare(table2);
+        
+            //ExportGridToword();
 
         }
+
+
 
         private void dataGridView2_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
