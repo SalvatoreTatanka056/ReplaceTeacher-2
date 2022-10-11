@@ -710,7 +710,6 @@ namespace ReplaceTeacher
                                     {
                                         myDataRow["Nome_Docente_8"] += itemD.Nome_docente;
                                         
-
                                         listDisponibili[i] = itemD;
                                         table.Rows.Add(myDataRow);
                                     }
@@ -763,8 +762,28 @@ namespace ReplaceTeacher
         {
 
 
-          /*  DataTable table2 = new DataTable();
-            
+        DataTable table2 ;
+        table2 = new DataTable();
+        table2.Columns.Add("Scelta", typeof(bool));
+        table2.Columns.Add("Giorno", typeof(string));
+        table2.Columns.Add("Nome_Assente", typeof(string));
+        table2.Columns.Add("1°", typeof(string));
+        table2.Columns.Add("Nome_Docente_1", typeof(string));
+        table2.Columns.Add("2°", typeof(string));
+        table2.Columns.Add("Nome_Docente_2", typeof(string));
+        table2.Columns.Add("3°", typeof(string));
+        table2.Columns.Add("Nome_Docente_3", typeof(string));
+        table2.Columns.Add("4°", typeof(string));
+        table2.Columns.Add("Nome_Docente_4", typeof(string));
+        table2.Columns.Add("5°", typeof(string));
+        table2.Columns.Add("Nome_Docente_5", typeof(string));
+        table2.Columns.Add("6°", typeof(string));
+        table2.Columns.Add("Nome_Docente_6", typeof(string));
+        table2.Columns.Add("7°", typeof(string));
+        table2.Columns.Add("Nome_Docente_7", typeof(string));
+        table2.Columns.Add("8°", typeof(string));
+        table2.Columns.Add("Nome_Docente_8", typeof(string));
+
             if (table != null)
             {
                 foreach (DataRow item in table.Rows)
@@ -773,29 +792,92 @@ namespace ReplaceTeacher
                     {
                         if (!item.Field<String>("Nome_Docente_1").Equals(""))
                         {
-                            table2.Rows.Add(item);
+                 
+                            DataRow item2 = table2.NewRow();
+
+                            item2.ItemArray = item.ItemArray;
+                            table2.Rows.Add(item2);
 
                         }
+
+                        if (!item.Field<String>("Nome_Docente_2").Equals(""))
+                        {
+
+                            DataRow item2 = table2.NewRow();
+
+                            item2.ItemArray = item.ItemArray;
+                            table2.Rows.Add(item2);
+
+                        }
+
+                        if (!item.Field<String>("Nome_Docente_3").Equals(""))
+                        {
+
+                            DataRow item2 = table2.NewRow();
+
+                            item2.ItemArray = item.ItemArray;
+                            table2.Rows.Add(item2);
+
+                        }
+
+                        if (!item.Field<String>("Nome_Docente_4").Equals(""))
+                        {
+
+                            DataRow item2 = table2.NewRow();
+
+                            item2.ItemArray = item.ItemArray;
+                            table2.Rows.Add(item2);
+
+                        }
+
+                        if (!item.Field<String>("Nome_Docente_5").Equals(""))
+                        {
+
+                            DataRow item2 = table2.NewRow();
+
+                            item2.ItemArray = item.ItemArray;
+                            table2.Rows.Add(item2);
+
+                        }
+
+                        if (!item.Field<String>("Nome_Docente_6").Equals(""))
+                        {
+
+                            DataRow item2 = table2.NewRow();
+
+                            item2.ItemArray = item.ItemArray;
+                            table2.Rows.Add(item2);
+
+                        }
+
+                        if (!item.Field<String>("Nome_Docente_7").Equals(""))
+                        {
+
+                            DataRow item2 = table2.NewRow();
+
+                            item2.ItemArray = item.ItemArray;
+                            table2.Rows.Add(item2);
+
+                        }
+
+                        if (!item.Field<String>("Nome_Docente_8").Equals(""))
+                        {
+
+                            DataRow item2 = table2.NewRow();
+
+                            item2.ItemArray = item.ItemArray;
+                            table2.Rows.Add(item2);
+
+                        }
+
                     }
 
                 }
-            } */
-            
+            }
 
-
-            /*foreach (structureAssentiDisponibili itemA in listAssenti)
-           {
-                  foreach (structureAssentiDisponibili itemD in listDisponibili)
-                  {
-
-                  }
-              }
-
-
-              ExportGridToword();
-
-
-             */
+            dataGridView2.DataSource = table2;
+    
+           ExportGridToword();
 
         }
 
