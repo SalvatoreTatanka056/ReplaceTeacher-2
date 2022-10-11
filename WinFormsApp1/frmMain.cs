@@ -876,6 +876,8 @@ namespace ReplaceTeacher
             }
 
             dataGridView2.DataSource = table2;
+
+
     
            ExportGridToword();
 
