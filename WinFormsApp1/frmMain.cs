@@ -879,11 +879,9 @@ namespace ReplaceTeacher
 
             //Compare(table2);
         
-            //ExportGridToword();
+            ExportGridToword();
 
         }
-
-
 
         private void dataGridView2_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
